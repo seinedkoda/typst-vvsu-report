@@ -18,6 +18,10 @@
   message: "vvsu-report minimum typst version required: " + repr(minimum-typst-version),
 )
 
+#let member(role: [], name: []) = {
+  (role: role, name: name)
+}
+
 // Конвертация межстрочного интервала из MS Word
 #let _msword-leading(ratio) = (1.15 * ratio - 0.6625) * 1em
 
@@ -476,7 +480,7 @@
   title3: none, // Название работы (реквизит 8)
   code: none, // Код работы
   stamp: none, // Гриф допуска к защите (реквизит 5)
-  authors: (), // Список авторов (реквизит 9-14)
+  members: (), // Список авторов (реквизит 9-14)
   year: datetime.today().year(), // Год выполнения работы (реквизит 15)
 ) = context {
   // Добавляем метаданные
@@ -586,10 +590,10 @@
       align: bottom,
       column-gutter: 1em,
       row-gutter: 1em,
-      ..authors
-        .map(author => {
-          let role = if type(author) == dictionary and "role" in author { author.role } else { [] }
-          let name = if type(author) == dictionary and "name" in author { author.name } else { [] }
+      ..members
+        .map(member => {
+          let role = member.role
+          let name = member.name
           ([#role], [#line(length: 100%)], [#name])
         })
         .flatten(),
