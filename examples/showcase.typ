@@ -1,4 +1,4 @@
-#import "../vvsu.typ": *
+#import "../vvsu-report.typ": *
 
 #show: vvsu.with()
 

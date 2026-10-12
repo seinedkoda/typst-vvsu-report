@@ -8,22 +8,6 @@
 // Vladivostok State University
 // Mark Vodyanitskiy (@mvodya), Arkadiy Schneider (@thebandik), Seined Koda (@seinedkoda), ElijahG (@ElijahGgnore) 2026
 
-#let template-name = "vvsu-report"
-#let template-version = version(1, 0, 0)
-// #let manifest = toml("typst.toml").package
-// #let template-name = manifest.name
-// #let template-version = manifest.version
-
-#let minimum-typst-version = version(0, 14, 0)
-#assert(
-  sys.version >= minimum-typst-version,
-  message: "vvsu-report minimum typst version required: " + repr(minimum-typst-version),
-)
-
-#let member(role: [], name: []) = {
-  (role: role, name: name)
-}
-
 // Конвертация межстрочного интервала из MS Word
 #let _msword-leading(ratio) = (1.15 * ratio - 0.6625) * 1em
 
@@ -276,11 +260,6 @@
 #let vvsu(
   body,
 ) = {
-  // Добавляем метаданные
-  set document(
-    description: template-name + " / " + str(template-version),
-  )
-
   // Настройки страницы и нумерации страниц
   set page(
     paper: "a4",
@@ -472,7 +451,9 @@
   body
 }
 
-
+#let member(role: [], name: []) = {
+  (role: role, name: name)
+}
 
 //// Титульный лист
 #let title-page(

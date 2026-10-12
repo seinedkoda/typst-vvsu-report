@@ -40,7 +40,7 @@ typst --version
 Минимальный файл отчета (`report.typ`) может выглядеть так:
 
 ```typst
-#import "vvsu.typ": *
+#import "vvsu-report.typ": *
 
 #show: vvsu.with()
 
@@ -50,7 +50,7 @@ typst --version
   title3: [Название работы],
   department: vvsu-depart-its,
   members: (
-    member(role: [Студент\ гр. БИС-YY-XX], name: [И.И. Иванов]),
+    member(role: [Студент\ гр. ZZZ-YY-XX], name: [И.И. Иванов]),
     member(role: [Преподаватель], name: [П.П. Петров]),
   ),
 )
