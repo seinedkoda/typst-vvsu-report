@@ -49,9 +49,9 @@ typst --version
   title2: [по дисциплине "Название дисциплины"],
   title3: [Название работы],
   department: vvsu-depart-its,
-  authors: (
-    (role: [Студент\ гр. БИС-YY-XX], name: [И.И. Иванов]),
-    (role: [Преподаватель], name: [П.П. Петров]),
+  members: (
+    member(role: [Студент\ гр. БИС-YY-XX], name: [И.И. Иванов]),
+    member(role: [Преподаватель], name: [П.П. Петров]),
   ),
 )
 
