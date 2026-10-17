@@ -35,12 +35,14 @@ typst --version
 
 ### Сборка минимального отчета
 
-[Загрузите последнюю версию `vvsu-report.typ`](https://github.com/seinedkoda/typst-vvsu-report/releases/latest). Разместите его в директории рядом с будущим отчетом.
+#### Рекомендуемые инструменты для редактирования отчётов:
+- Текстовый редактор: [VSCode](https://code.visualstudio.com/)
+- Расширение для удобной работы с typst вместе предпросмотром: [Tinymist](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist)
 
-Минимальный файл отчета (`report.typ`) может выглядеть так:
+Для создания минимального файла отчёта (`report.typ`), используйте следующий код:
 
 ```typst
-#import "vvsu-report.typ": *
+#import "@preview/carrot-vvsu-report:1.0.0": *
 
 #show: vvsu.with()
 
@@ -62,6 +64,10 @@ typst --version
 == Подраздел
 
 Будущий текст отчета в подразделе.
+
+#conclusion[
+  В ходе выполнения работы...
+]
 ```
 
 Сборка PDF файла:
@@ -69,6 +75,15 @@ typst --version
 ```sh
 typst compile report.typ report.pdf
 ```
+
+### Альтернативные способы работы
+
+#### Онлайн редактор typst
+- [Создайте свой проект онлайн на странице данного шаблона](https://typst.app/universe/package/carrot-vvsu-report)
+
+#### Использование локального файла
+- [Загрузите последнюю версию `vvsu-report.typ`](https://github.com/seinedkoda/typst-vvsu-report/releases/latest)
+- Положите его рядом с будущим отчётом и подключите через `#import "vvsu-report.typ": *`
 
 ## Чем это отличается от MS Word?
 
